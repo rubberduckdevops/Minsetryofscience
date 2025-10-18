@@ -11,9 +11,7 @@
       "require": "./dist/ministry-of-science-ui.umd.js",
       "types": "./dist/index.d.ts"
     },
-    "./styles": "./dist/style.css",
-    "./dist/ministry-of-science-ui.css": "./dist/ministry-of-science-ui.css",
-    "./dist/style.css": "./dist/style.css"
+    "./dist/*": "./dist/*"
   },
   "files": [
     "dist"
