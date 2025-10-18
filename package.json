@@ -20,6 +20,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "build:lib": "tsc && vite build --mode library",
+    "prepare": "npm run build:lib",
     "lint": "eslint .",
     "preview": "vite preview"
   },
