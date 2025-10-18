@@ -1,0 +1,69 @@
+.mos-warning-stripe {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Caution - Yellow and Black */
+.mos-warning-stripe--caution {
+  background: repeating-linear-gradient(
+    45deg,
+    #FFC107 0px,
+    #FFC107 20px,
+    #000000 20px,
+    #000000 40px
+  );
+  background-size: 56.57px 56.57px; /* sqrt(2) * 40px for seamless diagonal */
+}
+
+/* Danger - Red and Black */
+.mos-warning-stripe--danger {
+  background: repeating-linear-gradient(
+    45deg,
+    #FF0000 0px,
+    #FF0000 20px,
+    #000000 20px,
+    #000000 40px
+  );
+  background-size: 56.57px 56.57px;
+}
+
+/* Hazard - Orange and Black */
+.mos-warning-stripe--hazard {
+  background: repeating-linear-gradient(
+    45deg,
+    #FF6F00 0px,
+    #FF6F00 20px,
+    #000000 20px,
+    #000000 40px
+  );
+  background-size: 56.57px 56.57px;
+}
+
+/* Animated variant */
+.mos-warning-stripe--animated {
+  animation: stripeScroll 3s linear infinite;
+  will-change: background-position;
+}
+
+/* Speed variants */
+.mos-warning-stripe--slow {
+  animation-duration: 5s;
+}
+
+.mos-warning-stripe--normal {
+  animation-duration: 3s;
+}
+
+.mos-warning-stripe--fast {
+  animation-duration: 1.5s;
+}
+
+@keyframes stripeScroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 56.57px 0;
+  }
+}

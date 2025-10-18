@@ -1,0 +1,183 @@
+/* Headings */
+.mos-heading {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.mos-heading--1 {
+  font-size: 48px;
+  letter-spacing: 4px;
+}
+
+.mos-heading--2 {
+  font-size: 36px;
+  letter-spacing: 3px;
+}
+
+.mos-heading--3 {
+  font-size: 28px;
+}
+
+.mos-heading--4 {
+  font-size: 22px;
+}
+
+.mos-heading--5 {
+  font-size: 18px;
+}
+
+.mos-heading--6 {
+  font-size: 16px;
+}
+
+/* Stencil effect - military style */
+.mos-heading--stencil {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-primary);
+  text-stroke: 2px var(--color-primary);
+  paint-order: stroke fill;
+}
+
+/* Glow effect */
+.mos-heading--glow {
+  color: var(--color-primary);
+  text-shadow:
+    0 0 10px rgba(255, 193, 7, 0.8),
+    0 0 20px rgba(255, 193, 7, 0.6),
+    0 0 30px rgba(255, 193, 7, 0.4);
+}
+
+/* Text */
+.mos-text {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+}
+
+.mos-text--primary {
+  color: var(--color-text-primary);
+}
+
+.mos-text--secondary {
+  color: var(--color-text-secondary);
+}
+
+.mos-text--accent {
+  color: var(--color-primary);
+}
+
+.mos-text--mono {
+  font-family: var(--font-primary);
+  letter-spacing: 0.5px;
+}
+
+/* Sizes */
+.mos-text--xs {
+  font-size: 10px;
+}
+
+.mos-text--sm {
+  font-size: 12px;
+}
+
+.mos-text--md {
+  font-size: 14px;
+}
+
+.mos-text--lg {
+  font-size: 16px;
+}
+
+.mos-text--xl {
+  font-size: 20px;
+}
+
+/* Modifiers */
+.mos-text--uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mos-text--bold {
+  font-weight: 700;
+}
+
+/* Label */
+.mos-label {
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Code */
+.mos-code {
+  font-family: var(--font-primary);
+  background: var(--color-bg-dark);
+  border: 1px solid var(--color-border-secondary);
+  color: var(--color-primary);
+}
+
+.mos-code--inline {
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-size: 0.9em;
+}
+
+.mos-code--block {
+  display: block;
+  padding: var(--spacing-md);
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+.mos-code--block code {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Glitch effect for headings (optional animation) */
+@keyframes glitch {
+  0% {
+    text-shadow:
+      0 0 10px rgba(255, 193, 7, 0.8),
+      2px 2px 0 rgba(255, 0, 0, 0.3),
+      -2px -2px 0 rgba(0, 255, 255, 0.3);
+  }
+  25% {
+    text-shadow:
+      0 0 10px rgba(255, 193, 7, 0.8),
+      -2px -2px 0 rgba(255, 0, 0, 0.3),
+      2px 2px 0 rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow:
+      0 0 10px rgba(255, 193, 7, 0.8),
+      2px -2px 0 rgba(255, 0, 0, 0.3),
+      -2px 2px 0 rgba(0, 255, 255, 0.3);
+  }
+  75% {
+    text-shadow:
+      0 0 10px rgba(255, 193, 7, 0.8),
+      -2px 2px 0 rgba(255, 0, 0, 0.3),
+      2px -2px 0 rgba(0, 255, 255, 0.3);
+  }
+  100% {
+    text-shadow:
+      0 0 10px rgba(255, 193, 7, 0.8),
+      2px 2px 0 rgba(255, 0, 0, 0.3),
+      -2px -2px 0 rgba(0, 255, 255, 0.3);
+  }
+}
+
+.mos-heading--glitch {
+  animation: glitch 0.3s infinite;
+}

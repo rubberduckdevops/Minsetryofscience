@@ -1,0 +1,197 @@
+.mos-button {
+  position: relative;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  background: transparent;
+  padding: 0;
+}
+
+.mos-button__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: var(--border-width) solid var(--color-border-primary);
+  background: var(--color-bg-dark);
+  clip-path: polygon(
+    8px 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%,
+    0 8px
+  );
+}
+
+/* Corner cuts */
+.mos-button__corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  z-index: 1;
+}
+
+.mos-button__corner--tl {
+  top: 0;
+  left: 0;
+  border-top: var(--border-width) solid var(--color-border-primary);
+  border-left: var(--border-width) solid var(--color-border-primary);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.mos-button__corner--tr {
+  top: 0;
+  right: 0;
+  border-top: var(--border-width) solid var(--color-border-primary);
+  border-right: var(--border-width) solid var(--color-border-primary);
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+
+.mos-button__corner--bl {
+  bottom: 0;
+  left: 0;
+  border-bottom: var(--border-width) solid var(--color-border-primary);
+  border-left: var(--border-width) solid var(--color-border-primary);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.mos-button__corner--br {
+  bottom: 0;
+  right: 0;
+  border-bottom: var(--border-width) solid var(--color-border-primary);
+  border-right: var(--border-width) solid var(--color-border-primary);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* Sizes */
+.mos-button--small .mos-button__content {
+  padding: 6px 16px;
+  font-size: 12px;
+}
+
+.mos-button--medium .mos-button__content {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 14px;
+}
+
+.mos-button--large .mos-button__content {
+  padding: 12px 32px;
+  font-size: 16px;
+}
+
+/* Variants */
+.mos-button--primary {
+  color: var(--color-bg-darkest);
+}
+
+.mos-button--primary .mos-button__content {
+  background: var(--color-primary);
+  border-color: var(--color-primary-darker);
+}
+
+.mos-button--primary:hover:not(:disabled) .mos-button__content {
+  background: var(--color-primary-dark);
+  box-shadow: var(--shadow-glow);
+}
+
+.mos-button--primary .mos-button__corner {
+  border-color: var(--color-primary-darker);
+}
+
+.mos-button--secondary {
+  color: var(--color-text-primary);
+}
+
+.mos-button--secondary .mos-button__content {
+  background: var(--color-surface-secondary);
+  border-color: var(--color-border-primary);
+}
+
+.mos-button--secondary:hover:not(:disabled) .mos-button__content {
+  background: var(--color-bg-light);
+  border-color: var(--color-primary-dark);
+}
+
+.mos-button--danger {
+  color: var(--color-text-primary);
+}
+
+.mos-button--danger .mos-button__content {
+  background: #8B0000;
+  border-color: #FF0000;
+}
+
+.mos-button--danger:hover:not(:disabled) .mos-button__content {
+  background: #A00000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.mos-button--danger .mos-button__corner {
+  border-color: #FF0000;
+}
+
+.mos-button--ghost {
+  color: var(--color-text-primary);
+}
+
+.mos-button--ghost .mos-button__content {
+  background: transparent;
+  border-color: var(--color-border-secondary);
+}
+
+.mos-button--ghost:hover:not(:disabled) {
+  color: var(--color-primary);
+}
+
+.mos-button--ghost:hover:not(:disabled) .mos-button__content {
+  border-color: var(--color-primary);
+}
+
+/* States */
+.mos-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.mos-button--disabled,
+.mos-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.mos-button--full-width {
+  width: 100%;
+}
+
+/* Scan effect on hover */
+.mos-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 193, 7, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.mos-button:hover:not(:disabled)::before {
+  left: 100%;
+}
