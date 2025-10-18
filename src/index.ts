@@ -1,3 +1,6 @@
+// Import global styles and theme
+import './theme/globalStyles.css';
+
 // Theme exports
 export * from './theme/tokens';
 
